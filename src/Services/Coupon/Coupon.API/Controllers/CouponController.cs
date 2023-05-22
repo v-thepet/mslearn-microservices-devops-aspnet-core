@@ -50,7 +50,7 @@
             var coupon = await _couponRepository.FindCouponByCodeAsync(code);
 
             if (coupon is null || coupon.Consumed)
-                return NotFound(coupon == null ? "ERROR: The coupon doesn't exist" : "ERROR: The coupon has been redeemed already");
+                return NotFound(coupon == null ? "ERROR: This coupon doesn't exist" : "ERROR: The coupon has been redeemed already");
 
             var couponDto = _mapper.Translate(coupon);
 
